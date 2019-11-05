@@ -2,8 +2,10 @@
 
 ## CKA Syllabus
 
-Read this.
-https://github.com/cncf/curriculum/blob/master/certified_kubernetes_administrator_exam_v1.15.pdf
+Read the official CKA certification [page](https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/) especially for:
+
+* candidate handbook
+* curriculum
 
 ## Vim & bash preferences
 
