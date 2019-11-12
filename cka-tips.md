@@ -32,7 +32,25 @@ Use `kubectl create` or `run` to create and modify objects as opposed to declara
 
 In some cases, reference existing objects via config files, or `kubectl get -o yaml` to create new ones. e.g. Daemonsets, new kube-scheduler, etc.
 
-For application lifecycle management, you can use both `kubectl set` or `edit`.
+For application lifecycle management, use both `kubectl set` or `edit`.
+
+Speed up deletions by using `--grace-period=1`
+
+## OpenSSL
+
+To view certificate info:
+
+`openssl x509 -in $INFILE -text -noout`
+
+(Not tested) To sign new certificate, pass the CSR and CA pair:
+
+```bash
+openssl x509 req -in $CSR \
+-CA $CACERT
+-CAkey $CAkey
+-CAcreateserial
+-out $NEWCERT
+```
 
 ## Mummshad's Kubernetes the hard way
 
@@ -49,4 +67,8 @@ sudo swapoff -a
 ```
 
 * e2e test issue workaround: https://github.com/kubernetes/test-infra/issues/14712
+
+## Other Tips
+
+Interesting Study [Guide](https://github.com/David-VTUK/CKA-StudyGuide)
 
