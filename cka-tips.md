@@ -11,9 +11,28 @@ Read the official CKA certification [page](https://training.linuxfoundation.org/
 
 `:autocmd FileType yaml setlocal ai ts=2 sw=2 et nu rnu` 
 
+also useful in some situations:
+
+```bash
+:syntax on
+:set syntax=whitespace
+```
+
 ## Browser preferences
 
-* add Chrome search engine to speed up searches.
+Add Chrome search engine to speed up searches. Go to Settings | Manage search Engines to add a search engine. I use:
+
+* Keyword k, URL https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#%s
+* Keyword kio, URL https://kubernetes.io/docs/search/?q=%s
+* Keyword kapi, URL https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.16/#%s
+
+## Imperative management
+
+Use `kubectl create` or `run` to create and modify objects as opposed to declarative `apply` - it is much faster.
+
+In some cases, reference existing objects via config files, or `kubectl get -o yaml` to create new ones. e.g. Daemonsets, new kube-scheduler, etc.
+
+For application lifecycle management, you can use both `kubectl set` or `edit`.
 
 ## Mummshad's Kubernetes the hard way
 
