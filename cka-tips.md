@@ -18,6 +18,8 @@ also useful in some situations:
 :set syntax=whitespace
 ```
 
+For Macbook Pro users with touch-bar, it can be useful to map the Caps lock key to ESC.
+
 ## Browser preferences
 
 Add Chrome search engine to speed up searches. Go to Settings | Manage search Engines to add a search engine. I use:
