@@ -34,6 +34,9 @@ Use `kubectl create` or `run` to create and modify objects as opposed to declara
 
 In some cases, reference existing objects via config files, or `kubectl get -o yaml` to create new ones. e.g. Daemonsets, new kube-scheduler, etc.
 
+If a tempate from docs.kubernetes is required (e.g. persistent volume), try curling the yaml link in the web document:
+`curl -LO https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/pods/storage/pv-volume.yaml`
+
 For application lifecycle management, use both `kubectl set` or `edit`.
 
 Speed up deletions by using `--grace-period=1`
@@ -72,5 +75,8 @@ sudo swapoff -a
 
 ## Other Tips
 
-Interesting Study [Guide](https://github.com/David-VTUK/CKA-StudyGuide)
+Interesting study guides:
+[David-VTUK](https://github.com/David-VTUK/CKA-StudyGuide)
+[stretchcloud](https://github.com/stretchcloud/cka-lab-practice)
+[CKAD](https://github.com/dgkanatsios/CKAD-exercises)
 
