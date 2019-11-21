@@ -71,7 +71,20 @@ sudo sed -i.bak '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 sudo swapoff -a
 ```
 
+* there may be changes to the api, especially during configuration for coredns - use `apps/v1` for `kind: Deployment` instead of `extensions/v1beta1`
+
 * e2e test issue workaround: https://github.com/kubernetes/test-infra/issues/14712
+
+* if port-forward issues are seen after OSX Catalina upgrade or VMware Fusion upgrade, e.g.
+
+```
+Vagrant failed to apply the requested port forward. The following
+error message was generated while attempting to apply the port
+forward rule:
+
+  Port forward conflict on host port 2730
+```
+try cleaning up the [vagrant-vmware](https://github.com/hashicorp/vagrant/issues/10575#issuecomment-517168661) NAT settings.
 
 ## Other Tips
 
