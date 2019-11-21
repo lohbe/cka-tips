@@ -65,13 +65,15 @@ openssl x509 req -in $CSR \
 
 * `enp0s8` may not be available with some configurations, especially in VMware fusion: `ip addr` should show the correct interface of internal range 192.x instead - e.g. `eth1`.
 
-* kubelet will not start with swap error in /var/log/syslog. remember to turn off swap in worker nodes via:
+* kubelet will not start with swap error in `/var/log/syslog` or `journalctl -u kubelet`. Remember to turn off swap in worker nodes via:
 ```bash
 sudo sed -i.bak '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 sudo swapoff -a
 ```
 
-* there may be changes to the api, especially during configuration for coredns - use `apps/v1` for `kind: Deployment` instead of `extensions/v1beta1`
+* there may be changes to the api, especially during configuration for coredns - use `apps/v1` for `kind: Deployment` instead of `extensions/v1beta1` if attempting to deploy later versions of kubernetes, eg. `1.16.x`
+
+* using `kubectl get componentstatuses` may result in empty results, esp. for 1.16.0.
 
 * e2e test issue workaround: https://github.com/kubernetes/test-infra/issues/14712
 
